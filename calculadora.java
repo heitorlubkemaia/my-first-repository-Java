@@ -2,13 +2,15 @@ import java.util.Scanner;
 
 public class calculadora {
     public static void main (String[] banana){
+        int op;
         int num1;
         int num2;
         double resultado = 0; 
         Scanner entrada = new Scanner(System.in);
+        do {
         System.out.println
-        ("ESCOLHA A OPERAÇÃO\n1 - SOMA\n2 - SUBTRAÇÃO\n3 - MULTIPLICAÇÃO\n4 - DIVISÃO");
-        int op = entrada.nextInt();
+        ("ESCOLHA A OPERAÇÃO\n0 - SAIR\n1 - SOMA\n2 - SUBTRAÇÃO\n3 - MULTIPLICAÇÃO\n4 - DIVISÃO");
+        op = entrada.nextInt();
         if (op == 1) {
             System.out.println("Digite a 1º parcela\n");
             num1 = entrada.nextInt();
@@ -40,15 +42,30 @@ public class calculadora {
             num1 = entrada.nextInt();
             System.out.println("Digite o divisor\n");
             num2 = entrada.nextInt();
-            resultado = num1 / num2;
-            System.out.println("O quociente é:");
+            if (num2 != 0) {
+                resultado = (double) num1 / num2;
+                System.out.println("O quociente é:");
+            }  
+            else   
+            {
+                System.out.println("Não é possível dividir por zero!");
+            }
+            
         }
         else{
+            if (op == 0) {
+                
+            }
+            else{
             System.out.println("ERRO OPÇÃO INESSISTENTE!!!");
+            }
         }
-        System.out.println(resultado);
+        if (op != 0) {
+            System.out.println(resultado);
+        }
 
 
+        }while(op != 0);
         entrada.close();
     }
 }

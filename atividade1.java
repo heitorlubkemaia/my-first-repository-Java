@@ -4,13 +4,17 @@ import java.util.Scanner;
 public class atividade1 {
     public static void main(String[] args) {
 
+
         Scanner sc = new Scanner(System.in);
         int jogadas = 0;
         int numd;
         Random ram = new Random();
-        int num = ram.nextInt(11)+ 1;
+        System.out.println("Digite número maximo:");
+        int tam = sc.nextInt();
+        int num = ram.nextInt(tam)+ 1;
 
-        System.out.println("\tDescubra o número de 1 a 10 gerado aleatóriamente");
+        System.out.print("\tDescubra o número de 1 a "+tam);
+        System.out.println(" gerado aleatóriamente");
 
         do{
             System.out.println("Digite:");
